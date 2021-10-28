@@ -9,6 +9,7 @@ import (
 
 type DummyHandler struct {
 	FilePath string
+	Status int
 }
 
 func (h *DummyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -29,5 +30,10 @@ func (h *DummyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+
+	if h.Status != 0 {
+		w.WriteHeader(h.Status)
+	}
+
 	w.Write(json)
 }
