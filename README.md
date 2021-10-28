@@ -13,12 +13,15 @@ Complete the following steps to run this app:
 The dummy api will now be available on `localhost:8080`
 
 ## Adding Routes
-Routes can be added to the `router.go` file. Example routes have been added which you can copy. You need only change the url and path to the schema:
+Routes can be added to the `router.go` file. Example routes have been added which you can copy. You need only change the url and path to the schema and optionally specify a response http status code. If no status is passed the endpoint will return a status of `200`:
 
 ```golang
 mux.Handle(
     "/api/test-url",
-    &h.DummyHandler{FilePath: "./schemas/you_json_response.json"},
+    &h.DummyHandler{
+        FilePath: "./schemas/you_json_response.json",
+        Status: 201,
+    },
 )
 ```
 
