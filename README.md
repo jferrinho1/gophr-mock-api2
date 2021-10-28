@@ -19,7 +19,7 @@ Routes can be added to the `router.go` file. Example routes have been added whic
 mux.Handle(
     "/api/test-url",
     &h.DummyHandler{
-        FilePath: "./schemas/you_json_response.json",
+        FilePath: "./schemas/your_json_response.json",
         Status: 201,
     },
 )
