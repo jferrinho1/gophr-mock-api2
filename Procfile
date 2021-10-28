@@ -1,0 +1,1 @@
+web: bin/hiscox-mock-server
