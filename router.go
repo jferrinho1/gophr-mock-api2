@@ -20,7 +20,7 @@ func RegisterRoutes(mux *mux.Router) {
 			FilePath: "./schemas/get-team.json",
 			Status:   200,
 		},
-	).Methods("POST")
+	).Methods("GET")
 
 	mux.Handle(
 		"/api/get-team",
