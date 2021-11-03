@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"fmt"
 	"net/http"
 
 	h "github.com/jferrinho1/gophr-mock-api2/handlers"
