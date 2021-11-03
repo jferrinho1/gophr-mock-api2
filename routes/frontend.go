@@ -9,7 +9,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 	mux.Handle(
 		"/api/test",
 		&h.DummyHandler{
-			FilePath: "./schemas/test.json",
+			FilePath: "./schemas/frontend/test.json",
 			Status:   201,
 		},
 	).Methods("GET", "OPTIONS")
@@ -18,7 +18,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-basic-info",
     &h.DummyHandler{
-      FilePath: "./schemas/workspace-basic-info.json",
+      FilePath: "./schemas/frontend/workspace-basic-info.json",
       Status:   200,
     },
   ).Methods("GET", "OPTIONS")
@@ -26,7 +26,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/registration-info",
     &h.DummyHandler{
-      FilePath: "./schemas/registration-info.json",
+      FilePath: "./schemas/frontend/registration-info.json",
       Status:   200,
     },
   ).Methods("GET", "OPTIONS")
@@ -34,7 +34,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-address",
     &h.DummyHandler{
-      FilePath: "./schemas/workspace-address.json",
+      FilePath: "./schemas/frontend/workspace-address.json",
       Status:   200,
     },
   ).Methods("GET", "OPTIONS")
@@ -42,7 +42,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-contacts",
     &h.DummyHandler{
-      FilePath: "./schemas/workspace-contacts.json",
+      FilePath: "./schemas/frontend/workspace-contacts.json",
       Status:   200,
     },
   ).Methods("GET", "OPTIONS")
@@ -50,13 +50,15 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-basic-info",
     &h.DummyHandler{
+			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
-  ).Methods("POST")
+  ).Methods("POST", "OPTIONS")
   
   mux.Handle(
     "/api/registration-info",
     &h.DummyHandler{
+			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
   ).Methods("POST", "OPTIONS")
@@ -64,6 +66,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-address",
     &h.DummyHandler{
+			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
   ).Methods("POST", "OPTIONS")
@@ -71,6 +74,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/workspace-contacts",
     &h.DummyHandler{
+			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
   ).Methods("POST", "OPTIONS")
