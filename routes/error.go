@@ -8,21 +8,21 @@ import (
 func RegisterErrorRoutes(mux *mux.Router) {
 	mux.Handle(
 		"/api/error/401",
-		&h.DummyErrorHandler{Status: 401},
+		&h.DummyHandler{Status: 401},
 	)
 
 	mux.Handle(
 		"/api/error/404",
-		&h.DummyErrorHandler{Status: 404},
+		&h.DummyHandler{Status: 404},
 	)
 
 	mux.Handle(
 		"/api/error/422",
-		&h.DummyErrorHandler{Status: 422},
+		&h.DummyHandler{Status: 422},
 	)
 
 	mux.Handle(
 		"/api/error/500",
-		&h.DummyErrorHandler{Status: 500},
+		&h.DummyHandler{Status: 500},
 	)
 }

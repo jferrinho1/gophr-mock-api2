@@ -5,5 +5,4 @@ import (
 )
 
 func RegisterMobileMiddleware(mux *mux.Router) {
-
 }

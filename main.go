@@ -4,16 +4,18 @@ import (
 	"net/http"
 	"os"
 
-	gm "github.com/gorilla/mux"
+	"github.com/gorilla/mux"
 
+	h "github.com/jferrinho1/gophr-mock-api2/handlers"
 	m "github.com/jferrinho1/gophr-mock-api2/middleware"
 	r "github.com/jferrinho1/gophr-mock-api2/routes"
 )
 
 func main() {
-	mux := gm.NewRouter()
+	mux := mux.NewRouter()
 
 	r.RegisterErrorRoutes(mux)
+	registerOptionsRoute(mux)
 	registerFrontendRoutes(mux)
 	registerMobileRoutes(mux)
 
@@ -26,16 +28,21 @@ func main() {
 	http.ListenAndServe(":"+port, mux)
 }
 
-func registerFrontendRoutes(mux *gm.Router) {
+func registerFrontendRoutes(mux *mux.Router) {
 	subRouter := mux.PathPrefix("/frontend").Subrouter()
 
 	r.RegisterFrontendRoutes(subRouter)
 	m.RegisterFrontendMiddleware(subRouter)
 }
 
-func registerMobileRoutes(mux *gm.Router) {
+func registerMobileRoutes(mux *mux.Router) {
 	subRouter := mux.PathPrefix("/mobile").Subrouter()
 
 	r.RegisterMobileRoutes(subRouter)
 	m.RegisterMobileMiddleware(subRouter)
+}
+
+func registerOptionsRoute(mux *mux.Router) {
+	mux.Use(m.AddCorsHeaders)
+	mux.PathPrefix("/").Handler(&h.DummyHandler{Status: 200}).Methods(http.MethodOptions)
 }

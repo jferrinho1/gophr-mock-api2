@@ -12,7 +12,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/frontend/test.json",
 			Status:   201,
 		},
-	).Methods("GET", "OPTIONS")
+	).Methods("GET")
 
 	  // workspace endpoints
   mux.Handle(
@@ -21,7 +21,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       FilePath: "./schemas/frontend/workspace-basic-info.json",
       Status:   200,
     },
-  ).Methods("GET", "OPTIONS")
+  ).Methods("GET")
   
   mux.Handle(
     "/api/registration-info",
@@ -29,7 +29,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       FilePath: "./schemas/frontend/registration-info.json",
       Status:   200,
     },
-  ).Methods("GET", "OPTIONS")
+  ).Methods("GET")
   
   mux.Handle(
     "/api/workspace-address",
@@ -37,7 +37,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       FilePath: "./schemas/frontend/workspace-address.json",
       Status:   200,
     },
-  ).Methods("GET", "OPTIONS")
+  ).Methods("GET")
   
   mux.Handle(
     "/api/workspace-contacts",
@@ -45,7 +45,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       FilePath: "./schemas/frontend/workspace-contacts.json",
       Status:   200,
     },
-  ).Methods("GET", "OPTIONS")
+  ).Methods("GET")
   
   mux.Handle(
     "/api/workspace-basic-info",
@@ -53,7 +53,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
-  ).Methods("POST", "OPTIONS")
+  ).Methods("POST")
   
   mux.Handle(
     "/api/registration-info",
@@ -61,7 +61,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
-  ).Methods("POST", "OPTIONS")
+  ).Methods("POST")
   
   mux.Handle(
     "/api/workspace-address",
@@ -69,7 +69,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
-  ).Methods("POST", "OPTIONS")
+  ).Methods("POST")
   
   mux.Handle(
     "/api/workspace-contacts",
@@ -77,5 +77,5 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/frontend/standard-schema.json",
       Status:   200,
     },
-  ).Methods("POST", "OPTIONS")
+  ).Methods("POST")
 }
