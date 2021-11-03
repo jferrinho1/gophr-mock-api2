@@ -1,8 +1,5 @@
-module github.com/hiscox-mock-server
+module github.com/jferrinho1/gophr-mock-api2
 
 go 1.17
 
-require (
-	github.com/gorilla/mux v1.8.0 // indirect
-	github.com/joho/godotenv v1.3.0 // indirect
-)
+require github.com/gorilla/mux v1.8.0
