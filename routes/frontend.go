@@ -13,15 +13,4 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			Status:   201,
 		},
 	).Methods("GET")
-
-	subRouter := mux.NewRoute().Subrouter()
-	subRouter.Use(m.RequireFrontendVersionHeader)
-	
-	subRouter.Handle(
-		"/api/test",
-		&h.DummyHandler{
-			FilePath: "./schemas/test.json",
-			Status:   201,
-		},
-	).Methods("GET")
 }
