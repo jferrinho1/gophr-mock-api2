@@ -6,6 +6,7 @@ import (
 )
 
 func RegisterFrontendMiddleware(mux *mux.Router) {
+	mux.Use(m.HandlePreflightRequests)
 	mux.Use(m.RequireFrontendVersionHeader)
 	mux.Use(m.RequireSessionIdHeader)
 }

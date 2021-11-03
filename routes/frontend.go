@@ -12,7 +12,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 			FilePath: "./schemas/test.json",
 			Status:   201,
 		},
-	).Methods("GET")
+	).Methods("GET", "OPTIONS")
 
 	  // workspace endpoints
   mux.Handle(
