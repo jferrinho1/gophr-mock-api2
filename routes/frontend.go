@@ -14,7 +14,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 		},
 	).Methods("GET")
 
-	  // workspace endpoints
+	  // workspace get endpoints
   mux.Handle(
     "/api/workspace-basic-info",
     &h.DummyHandler{
@@ -47,6 +47,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("GET")
   
+	// workspace post endpoints
   mux.Handle(
     "/api/workspace-basic-info",
     &h.DummyHandler{
@@ -78,4 +79,14 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       Status:   200,
     },
   ).Methods("POST")
+
+	// billing overview get endpoints
+ mux.Handle(
+    "/api/billing-overview-statement",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/billing-overview-statement.json",
+      Status:   200,
+    },
+  ).Methods("GET")
+
 }
