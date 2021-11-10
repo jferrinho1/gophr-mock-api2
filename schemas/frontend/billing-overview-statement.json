@@ -5,7 +5,7 @@
         "due_date": "26 NOV 2021",
         "payment_method": ["VISA ****3456"],
         "amount": "1345.00",
-        "status": "DUE"
+        "status": "due"
     },
   {
         "statement_id": "124",
@@ -13,7 +13,7 @@
         "due_date": "26 OCT 2021",
         "payment_method": ["VISA ****3456"],
         "amount": "2450.00",
-        "status": "OVERDUE"
+        "status": "overdue"
     },
   {
         "statement_id": "125",
@@ -21,6 +21,6 @@
         "due_date": "26 SEP 2021",
         "payment_method": ["VISA ****3456", "VISA ****3456"],
         "amount": "3450.00",
-        "status": "PAID"
+        "status": "paid"
     }]
 }
