@@ -82,7 +82,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 
 	// billing overview get endpoints
  mux.Handle(
-    "/api/billing-overview-statement",
+    "/api/billing-statement",
     &h.DummyHandler{
       FilePath: "./schemas/frontend/billing-overview-statement.json",
       Status:   200,
