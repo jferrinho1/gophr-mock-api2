@@ -1,5 +1,6 @@
 {
     "data": [{
+        "statement_id": "123",
         "period": "26 Sep 2021 - 26 Oct 2021",
         "due_date": "26 NOV 2021",
         "payment_method": ["VISA ****3456"],
@@ -7,6 +8,7 @@
         "status": "DUE"
     },
   {
+        "statement_id": "124",
         "period": "26 Aug 2021 - 26 Sep 2021",
         "due_date": "26 OCT 2021",
         "payment_method": ["VISA ****3456"],
@@ -14,6 +16,7 @@
         "status": "OVERDUE"
     },
   {
+        "statement_id": "125",
         "period": "26 Jul 2021 - 26 Aug 2021",
         "due_date": "26 SEP 2021",
         "payment_method": ["VISA ****3456", "VISA ****3456"],
