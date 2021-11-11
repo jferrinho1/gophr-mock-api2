@@ -88,5 +88,14 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       Status:   200,
     },
   ).Methods("GET")
+	
+	// billing overview get endpoints
+ mux.Handle(
+    "/api/teams",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/teams.json",
+      Status:   200,
+    },
+  ).Methods("GET")
 
 }
