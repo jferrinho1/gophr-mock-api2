@@ -100,7 +100,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
 	
   // View team get endpoints
  mux.Handle(
-    "/api/teams/details/",
+    "/api/teams/details",
     &h.DummyHandler{
       FilePath: "./schemas/frontend/teams-details.json",
       Status:   200,
