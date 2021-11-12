@@ -116,4 +116,13 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("GET")
 
+  // View team post endpoints
+ mux.Handle(
+    "/api/teams-edit",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/standard-schema.json",
+      Status:   200,
+    },
+  ).Methods("POST")
+
 }
