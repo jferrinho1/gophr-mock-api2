@@ -109,7 +109,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
  
   // View team get endpoints
  mux.Handle(
-    "/api/teams/edit",
+    "/api/teams-edit",
     &h.DummyHandler{
       FilePath: "./schemas/frontend/teams-edit.json",
       Status:   200,
