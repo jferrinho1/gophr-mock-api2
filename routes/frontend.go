@@ -133,4 +133,12 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("POST")
 
+  mux.Handle(
+    "/api/teams/members",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/teams-members.json",
+      Status:   200,
+    },
+  ).Methods("GET")
+
 }
