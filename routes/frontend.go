@@ -136,11 +136,11 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/create-team",
     &h.DummyHandler{
-      FilePath: "./schemas/frontend/standard-schema.json",
+      FilePath: "./schemas/frontend/teams-edit.json",
       Status:   200,
     },
   ).Methods("POST")
-
+  
   /*
     Description: Get all team members for a specific team
     Method: GET
@@ -148,7 +148,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
   mux.Handle(
     "/api/teams/members",
     &h.DummyHandler{
-      FilePath: "./schemas/frontend/teams-edit.json",
+      FilePath: "./schemas/frontend/teams-members.json",
       Status:   200,
     },
   ).Methods("GET")
