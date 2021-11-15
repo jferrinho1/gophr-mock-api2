@@ -132,5 +132,13 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       Status:   200,
     },
   ).Methods("POST")
+  
+  mux.Handle(
+    "/api/create-team",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/standard-schema.json",
+      Status:   200,
+    },
+  ).Methods("POST")
 
 }
