@@ -80,7 +80,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("POST")
 
-	// billing overview get endpoints
+	// billing get endpoints
  mux.Handle(
     "/api/billing-statement",
     &h.DummyHandler{
@@ -89,7 +89,7 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("GET")
 	
-	// billing overview get endpoints
+	// teams get endpoints
  mux.Handle(
     "/api/teams",
     &h.DummyHandler{
@@ -98,7 +98,6 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("GET")
 	
-  // View team get endpoints
  mux.Handle(
     "/api/teams/details",
     &h.DummyHandler{
@@ -107,11 +106,30 @@ func RegisterFrontendRoutes(mux *mux.Router) {
     },
   ).Methods("GET")
  
-  // View team get endpoints
  mux.Handle(
     "/api/teams-edit",
     &h.DummyHandler{
       FilePath: "./schemas/frontend/teams-edit.json",
+      Status:   200,
+    },
+  ).Methods("GET")
+
+  /*
+    Description: Get all team members for a specific team
+    Method: GET
+  */
+  mux.Handle(
+    "/api/teams/members",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/teams-members.json",
+      Status:   200,
+    },
+  ).Methods("GET")
+  
+  mux.Handle(
+    "/api/teams/member-details",
+    &h.DummyHandler{
+      FilePath: "./schemas/frontend/teams-member-details.json",
       Status:   200,
     },
   ).Methods("GET")
@@ -140,17 +158,5 @@ func RegisterFrontendRoutes(mux *mux.Router) {
       Status:   200,
     },
   ).Methods("POST")
-  
-  /*
-    Description: Get all team members for a specific team
-    Method: GET
-  */
-  mux.Handle(
-    "/api/teams/members",
-    &h.DummyHandler{
-      FilePath: "./schemas/frontend/teams-members.json",
-      Status:   200,
-    },
-  ).Methods("GET")
 
 }
